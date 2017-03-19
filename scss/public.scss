@@ -73,15 +73,12 @@ html {
       @include transition(left .3s, width .3s, opacity .3s);
       
     }
-    &:hover {
+    &:hover, &.active {
       &:after {
         left: 0;
         width: 100%;
         @include opacity(1);
       }
-    }
-    &:hover {
-
     }
   }
 }
