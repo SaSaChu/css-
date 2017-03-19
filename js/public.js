@@ -4,5 +4,14 @@
  */
 
 $(function () {
+  $(window).scroll (function () {
+    if ($('#ad_fix').data ('show')) {
+      if ($(window).scrollTop () > $('#ad_fix').data ('show')) {
+        $('#ad_fix').addClass ('show');
+      } else {
+        $('#ad_fix').removeClass ('show');
+      }
+    }
+  });
 
 });
