@@ -47,3 +47,41 @@ html {
 
   }
 }
+
+
+#menu {
+  background-color: rgba(0, 0, 255, 0.2);
+  @include clearfix();
+  
+
+  > a {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      display: inline-block;
+      width: 0;
+      height: 3px;
+      background-color: red;
+      @include opacity(0);
+      @include transition(left .3s, width .3s, opacity .3s);
+      
+    }
+    &:hover {
+      &:after {
+        left: 0;
+        width: 100%;
+        @include opacity(1);
+      }
+    }
+    &:hover {
+
+    }
+  }
+}
