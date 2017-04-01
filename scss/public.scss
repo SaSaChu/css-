@@ -57,6 +57,8 @@ header {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0 10px;
+    // height: 100px;
+
 
     @include split-left(300px, '.logoboxs', '.menu');
 
@@ -69,6 +71,8 @@ header {
       @include range-width(0, 765px) {
         width: 100%;
         padding: 10px;
+        float: none;
+        margin: 0 auto;
       }
 
       img {
@@ -80,30 +84,32 @@ header {
     }
 
     .menu {
+      height: 100px;
+      line-height: 100px;
 
       @include range-width(0, 765px) {
         width: 100%;
       }
 
-
       display: inline-block;
       @include clearfix();
 
-      > div {
-        display: inline-block;
-
+      > a {
+        cursor: pointer;
+        display: inline;
+        border: 1px solid rgba(255, 0, 0, .3);
         @include range-width(500px, 765px) {
           width: calc(100% / 6);
         }
 
         @include range-width(0, 500px) {
           width: 100%;
+          float: none;
         }
 
-        float: right;
-        line-height: 100px;
+        // float: right;
 
-        + div {
+        + a {
 
           @include range-width(0, 765px) {
             padding-right: 0;
