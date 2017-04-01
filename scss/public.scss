@@ -56,31 +56,35 @@ header {
   .top {
     margin: 0 auto;
     max-width: 1200px;
+    padding: 0 10px;
 
     @include split-left(300px, '.logoboxs', '.menu');
 
     .logoboxs {
       display: inline-block;
-      // height: 100px;
       float: left;
       padding-top: 20px;
 
 
-      @include range-width(0, 500px) {
+      @include range-width(0, 765px) {
         width: 100%;
         padding: 10px;
       }
 
       img {
         width: 100%;
+        @include range-width(0, 765px) {
+          width: auto; // 自動
+        }
       }
     }
 
     .menu {
 
-      @include range-width(0, 500px) {
+      @include range-width(0, 765px) {
         width: 100%;
       }
+
 
       display: inline-block;
       @include clearfix();
@@ -88,14 +92,25 @@ header {
       > div {
         display: inline-block;
 
+        @include range-width(500px, 765px) {
+          width: calc(100% / 6);
+        }
+
         @include range-width(0, 500px) {
           width: 100%;
         }
 
-        width: calc(100% / 6);
-        float: left;
-        // height: 100px;
+        float: right;
         line-height: 100px;
+
+        + div {
+
+          @include range-width(0, 765px) {
+            padding-right: 0;
+          }
+
+          padding-right: 25px;
+        }
       }
     }
   }
