@@ -47,3 +47,61 @@ html {
 
   }
 }
+
+$c1: rgba(164, 44, 56, 1.00);
+
+#header {
+  display: inline-block;
+  width: 100%;
+  background-color: rgba(249, 43, 65, 1.00);
+
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    height: 44px;
+    width: calc(50% - 960px / 2);
+    background-color: $c1;
+  }
+
+  > div {
+    display: inline-block;
+    width: 960px;
+    
+    margin: 0 auto;
+    @include clearfix();
+
+    > * {
+      float: left;
+      display: inline-block;
+      height: 44px;
+    }
+    .logo {
+      width: 300px;
+      position: relative;
+      background-color: $c1;
+      
+      &:after {
+        $h: 44px / 2;
+        content: '';
+        position: absolute;
+        right: 0 - $h;
+        top: 0;
+        display: inline-block;
+        width: $h;
+        height: 100%;
+        
+        border: $h solid rgba(246, 47, 70, 1.00);
+        border-left: $h solid $c1;
+        border-bottom: $h solid $c1;
+      }
+    }
+    .menu {
+      width: calc(100% - 300px);
+    }
+  }
+}
